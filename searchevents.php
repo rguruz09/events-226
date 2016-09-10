@@ -59,6 +59,8 @@
                             $query = "SELECT * FROM events where event_category = '" . $category . "'";  
                         }                         
                         break;
+                    default:
+                        $query="SELECT * FROM events";
                 }
             }
             
@@ -85,7 +87,8 @@
                 $row = $result->fetch(PDO::FETCH_ASSOC);       
                 // Fetch the matching database table rows.
                 $data = $con->query($query);
-                $data->setFetchMode(PDO::FETCH_ASSOC);       
+                $data->setFetchMode(PDO::FETCH_ASSOC);   
+                if((is_array($row) || is_object($row))&&(is_array($data) || is_object($data))){
                 print "<table border='1'>\n";
                 // Construct the header row of the HTML table.
                 print "            <tr>\n";    
@@ -102,6 +105,10 @@
                     print "            </tr>\n";
                 }
                 print "        </table>\n";
+                 }
+                  else{
+                    echo 'Sorry your search did not match any events! Please try again';
+                }
         }
         catch(PDOException $ex) {
             echo 'ERROR: '.$ex->getMessage(); 
