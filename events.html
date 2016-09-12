@@ -5,26 +5,23 @@
  <form action="searchevents.php"
           method="post">
         <fieldset>
-                <p>
-            	<input type="radio"
-            	       name="searchtype"
-            	       value="all"
-                       id="all"
-            	       checked onclick="document.getElementById('fielddiv').style.display='none';document.getElementById('optionsdiv').style.display='none'" /> Search all events
-            	<input type="radio"
-            	       name="searchtype"
-            	       value="byfield"
-                       id="byfield" onclick="document.getElementById('fielddiv').style.display='block';document.getElementById('optionsdiv').style.display='none'"/> Search by field
-		          <input type="radio"
-            	       name="searchtype"
-            	       value="advanced"
-                       id="advanced" onclick="document.getElementById('fielddiv').style.display='none';document.getElementById('optionsdiv').style.display='block';showdiv('all')"/> Advanced Search
-           	</p>
+          <p>
+            <input type="radio"
+          	   name="searchtype"
+            	 value="all"
+               id="all"
+            	   checked onclick="document.getElementById('fielddiv').style.display='none';document.getElementById('optionsdiv').style.display='none'" /> Search all events
 
-           <div id="fielddiv" style="display:none">
-               <p>
-                   <label>Search by :</label>
-                   <select name="field" id="searchfield" onchange="showdiv('field')">
+		        <input type="radio"
+               name="searchtype"
+            	 value="advanced"
+               id="advanced" onclick="document.getElementById('fielddiv').style.display='none';document.getElementById('optionsdiv').style.display='block';showdiv('all')"/> Advanced Search
+          </p>
+
+          <div id="fielddiv" style="display:none">
+            <p>
+              <label>Search by :</label>
+                <select name="field" id="searchfield" onchange="showdiv('field')">
  		                 <option value="none" selected>Select</option>
                      <option value="eventname">Event Name</option>
                      <option value="location">Location</option>
@@ -36,29 +33,12 @@
 	   </div>
             <div id="optionsdiv" style="display:none">
             <div id="eventnamediv">
-               Event Name : <input type="text" name="name" id="name"></input><br><br>
+               Event Name :       <input type="text" name="name" id="name"></input><br><br>
             </div>
             <div id="locationdiv">
-               Enter Location : <input type="text" name="location" id="location"></input><br><br>
+               Enter Location :     <input type="text" name="location" id="location"></input><br><br>
             </div>
-            <div id="monthdiv">
-           <label>Select Month : </label>
-            <select name="month">
-              <option value="none" selected>Select</option>
-              <option value="1">Jan</option>
-              <option value="2">Feb</option>
-              <option value="3">Mar</option>
-              <option value="4">Apr</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">Aug</option>
-              <option value="9">Sep</option>
-              <option value="10">Oct</option>
-              <option value="11">Nov</option>
-              <option value="12">Dec</option>
-            </select><br><br>
-             </div>
+
              <div id="chargediv">
                 <label>Type of event : </label>
                 <input type="checkbox"
@@ -72,7 +52,7 @@
 			<div id="categorydiv">
 		<label>Choose a Category : </label>
 		   <select name="category">
-                       <option value="none" selected>Select</option>
+                      <option value="select" selected>Select</option>
                        <option value="charity">Charity</option>
                        <option value="entertainment">Entertainment</option>
  		       <option value="food">Food</option>
