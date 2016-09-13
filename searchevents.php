@@ -14,7 +14,7 @@
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                    PDO::ERRMODE_EXCEPTION);
             
-            $query = "SELECT * FROM events WHERE ";
+            $query = "SELECT event_name, event_address, event_date, event_free, event_category, event_description FROM events WHERE ";
             if ($searchtype == "all") {
                 $query .= "1";
             }                        
