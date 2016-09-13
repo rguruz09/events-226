@@ -9,8 +9,8 @@
   	$searchtype = filter_input(INPUT_POST, "searchtype");
     try {
             //connection to database add your db user name and password here
-            $con = new PDO("mysql:host=localhost;dbname=events",
-                               "raghu", "raghu");
+            $con = new PDO("mysql:host=localhost;dbname=swarna226",
+                               "swarna226", "cmpe226");
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                    PDO::ERRMODE_EXCEPTION);
             
@@ -55,7 +55,7 @@
                 if(strlen($free1) > 0 || strlen($free2) > 0){
                     
                     if(strlen($free1) > 0 && strlen($free2) > 0){
-                        $query .= " event_free = 1 OR event_free = 0";
+                        $query .= " (event_free = 1 OR event_free = 0) AND ";
                     }
                     elseif (strlen($free1)){
                         $query .= " event_free = 1 AND ";
