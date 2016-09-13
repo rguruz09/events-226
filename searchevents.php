@@ -90,6 +90,11 @@
                 {
                     print "            <tr>\n";
                     foreach ($row as $name => $value) {
+                        if( $value === '0' && $name === 'event_free')
+                            {print "                <td>Paid</td>\n";}
+                        else if( $value === '1' && $name === 'event_free')
+                            {print "                <td>Free</td>\n";}
+                        else
                         print "                <td>$value</td>\n";
                     }        
                     print "            </tr>\n";
