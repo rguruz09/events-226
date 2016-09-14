@@ -8,9 +8,12 @@
 <?php
   	$searchtype = filter_input(INPUT_POST, "searchtype");
     try {
+
+            $uname = "raghu";
+            $passwd = "raghu";
             //connection to database add your db user name and password here
-            $con = new PDO("mysql:host=localhost;dbname=swarna226",
-                               "swarna226", "cmpe226");
+            $con = new PDO("mysql:host=localhost;dbname=events",
+                               $uname, $passwd);
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                    PDO::ERRMODE_EXCEPTION);
             
